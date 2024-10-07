@@ -6,26 +6,26 @@ const formData = {
 
 const inputForm = document.querySelector("form");
 
-const saveEmail = localStorage.getItem("userEmail");
-const saveMess = localStorage.getItem("userMess"); 
+const formState = localStorage.getItem("feedback-form-state");
 
-if (saveEmail !== null) {
-    formData.email = saveEmail;
-    inputForm.elements.email.value = saveEmail;
+
+if (formState !== null) {
+    formData.email = JSON.parse(formState).email;
+    inputForm.elements.email.value = formData.email;
 }
 
 if (saveMess !== null) {
-    formData.message = saveMess;
-    inputForm.elements.message.value = saveMess;
+    formData.message = JSON.parse(formState).message;
+    inputForm.elements.message.value = formData.message;
 }
 
 inputForm.addEventListener("input", event => {
     if (event.target.name === "email") {
         formData.email = event.target.value;
-        localStorage.setItem("userEmail", event.target.value);
+        localStorage.setItem("feedback-form-state", JSON.stringify(formData));
     } else if (event.target.name === "message") {
         formData.message = event.target.value;
-        localStorage.setItem("userMess", event.target.value);
+        localStorage.setItem("feedback-form-state", JSON.stringify(formData));
     }
 });
 
@@ -38,7 +38,6 @@ submit.addEventListener("submit", event => {
     }
     else {
         console.log(formData);
-        //submit.submit();
         submit.reset(); 
         formData.email = '';
         formData.message = '';

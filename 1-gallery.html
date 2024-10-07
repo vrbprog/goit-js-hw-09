@@ -2,20 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/goit-js-hw-09/favicon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite Vanilla App Homework9</title>
+    <title>Gallery</title>
+    <script type="module" crossorigin src="/goit-js-hw-09/1-gallery.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-09/assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-09/assets/vendor-CgTBfC_f.js">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-09/assets/vendor-DkczhqSJ.css">
     <link rel="stylesheet" crossorigin href="/goit-js-hw-09/assets/styles-Pg28X5oe.css">
   </head>
   <body>
-
     <header class="header"></header>
       <div class="container">
         <nav class="nav">
-          <a class="nav-home active" href="./index.html">Home</a>
+          <a class="nav-home" href="./index.html">Home</a>
           <ul class="nav-list">
             <li class="nav-item">
-               <a class="nav-link" href="./1-gallery.html">Gallery</a>
+               <a class="nav-link active" href="./1-gallery.html">Gallery</a>
             </li>
             <li class="nav-item">
                <a class="nav-link" href="./2-form.html">Contact</a>
@@ -26,12 +29,8 @@
   </header>
 
     <main>
-      <div class="container"></div>
-        <h1 class="main-title-gradient">
-          Homework 9
-        </h1>
-      </div>
+      <ul class="gallery"></ul>
     </main>
-
+    
   </body>
 </html>

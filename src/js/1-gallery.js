@@ -90,6 +90,6 @@ for (const image of images) {
 const gallery = document.querySelector("ul.gallery");
 gallery.insertAdjacentHTML("beforeend", strGallery);
 
-const sgallery = new SimpleLightbox('.gallery-item a');
+const sgallery = new SimpleLightbox('.gallery-item a', {"captionType": "alt", "captionDelay": 250});
 sgallery.on('show.simplelightbox');
 
